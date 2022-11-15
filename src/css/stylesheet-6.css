@@ -1,16 +1,50 @@
+/* Gilroy font added */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/Gilroy-Medium.woff") format("woff");
+}
+
+/* Apply font family to body */
+body {
+  font-family: "Gilroy", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 600;
+}
+
+/* Common styles to all classes applied */
 .pitch,
 .eventDetails,
 .funding,
 .fundingInfo,
-.fundingInfoText {
+.fundingInfoText,
+.mentors,
+.mentor,
+.faq {
   display: flex;
   flex-direction: column;
+}
+
+/* pitch section styles */
+
+.pitch > h2 {
+  font-size: 4rem;
+  margin-top: 0px;
+}
+
+#pitchText {
+  font-size: 2.5rem;
+}
+
+#pitchDescription {
+  font-size: 1.5rem;
 }
 
 .eventDetails {
   position: relative;
   gap: 0.4em;
 }
+
 #eventLocation,
 .apply {
   padding: 0.3em 0.4em;
@@ -36,10 +70,8 @@
 #eventDates {
   font-size: 1.125rem;
 }
-.pitch > h2 {
-  font-size: 4rem;
-  margin-top: 0px;
-}
+
+/* funding section styles applied */
 
 .fundingInfoText > h2,
 .fundingInfo > h2 {
@@ -53,25 +85,24 @@
   text-align: center;
 }
 
-#pitchText {
-  font-size: 2.5rem;
-}
-
-#pitchDescription {
-  font-size: 1.5rem;
-}
-
+/* Common styles to all classes applied */
 .funding,
 .fundingInfo,
-.fundingInfoText {
+.fundingInfoText,
+.mentors,
+.mentor {
   align-items: center;
 }
 .fundingInfo.imageIncluded {
   gap: 3em;
 }
 
+.funding,
+.mentors,
+.pitch {
+  padding: 3.5em 0;
+}
 .funding {
-  padding: 4em 0;
   gap: 3em;
 }
 
@@ -81,11 +112,33 @@
   width: 100%;
 }
 
+/* mentor section styles applied */
+
+.mentorWrapper {
+  width: 100%;
+}
+
+.mentors {
+  gap: 2em;
+}
+.mentor > img {
+  width: 100%;
+  display: block;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.5em;
+}
+
+/* If screensize greater than 720px - Mobile First approach */
 @media (min-width: 720px) {
   .border {
     width: 4px;
     align-self: stretch;
     height: unset;
+  }
+  .funding,
+  .mentors,
+  .pitch {
+    padding: 1.5em 0;
   }
   .funding {
     flex-direction: row;
@@ -95,10 +148,19 @@
   .fundingInfo {
     width: 48%;
   }
+  .mentorWrapper {
+    display: flex;
+    gap: 6em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .mentor {
+    width: 25%;
+  }
   #pitchDescription {
     width: 80%;
   }
-}
-
-@media (min-width: 1024px) {
+  .questionsWrapper {
+    width: 80%;
+  }
 }
