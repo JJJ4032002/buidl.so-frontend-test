@@ -57,11 +57,14 @@ body {
 
 .apply {
   background-color: #3b82f6;
-  opacity: 0.6;
-  pointer-events: none;
   color: var(--color-cta-text);
   text-align: center;
   width: 250px;
+}
+
+.apply.disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .eventDetails > p {
@@ -118,7 +121,8 @@ body {
   width: 100%;
 }
 
-.mentors {
+.mentors,
+.faq {
   gap: 2em;
 }
 .mentor > img {
